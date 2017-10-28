@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Sliders
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static "slider_task/sliders.css" %}">
+{% endblock %}
+
+{% block content %}
+
+    {{ slider_formset.management_form }}
+    
+    <table class="slider_table">
+        <tr>
+        {% for chunk in slider_values_and_forms %}
+            <td>
+            {% for offset, min, max, start, form in chunk %}
+                <div class="slidecontainer" style="margin-left: {{ offset }}%;">
+                    <input type="range" min="{{ min }}" max="{{ max }}" value="{{ start }}" class="slider" id="{{ form.end_pos.id_for_label }}" name="{{ form.end_pos.html_name }}">
+                    <input type="hidden" id="{{ form.touched.id_for_label }}" name="{{ form.touched.html_name }}" value="False">
+                    <input type="hidden" id="{{ form.id.id_for_label }}" name="{{ form.id.html_name }}" value="{{ form.id.value }}">
+                </div>
+            {% endfor %}
+            </td>
+        {% endfor %}
+        </tr>
+    </table>
+
+
+    {% next_button %}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static "slider_task/sliders.js" %}"></script>
+{% endblock %}
