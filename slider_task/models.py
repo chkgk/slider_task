@@ -38,7 +38,7 @@ class SliderPlayer(BasePlayer):
     slider_min = models.IntegerField()
     slider_max = models.IntegerField()
 
-    def prepare_sliders(self, num, min, max):
+    def prepare_sliders(self, num=50, min=0, max=100):
         self.num_sliders = num
         self.slider_min = min
         self.slider_max = max
