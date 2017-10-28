@@ -44,7 +44,7 @@ class Slider(BaseSlider):
 ```
 
 Finally, make sure to call `prepare_sliders()` for each player when creating the session.
-Here you can also specify how many sliders you want to show to players as well as their minimum and maximum values which. (The defaults are num=1, min=0, max=100.)
+Here you can also specify how many sliders you want to show to players as well as their minimum and maximum values which. (The defaults are num=50, min=0, max=100.)
 ```python
 class Subsession(BaseSubsession):
     def creating_session(self):
