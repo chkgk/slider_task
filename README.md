@@ -1,6 +1,6 @@
 # oTree Slider Task
 
-An easy to configure, ready to use slider task for otree.
+An easy to configure, ready to use slider task for oTree.
 This is a beta version, you can help to enhance it by submitting issues and pull requests.
 
 ## Installation
